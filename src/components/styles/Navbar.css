@@ -1,0 +1,79 @@
+
+
+.navbar {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* You can adjust this padding */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* This will push the right section further to the right */
+}
+
+.navbar-logo {
+    height: 2.5rem;
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    height: 100%
+}
+
+.nav-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+
+    cursor: pointer;
+
+    height: 100%;
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+
+}
+
+.nav-button:hover {
+    color: #0084ff
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .navbar-name {
+        font-size: 0.75rem;
+    }
+
+    .nav-button {
+        font-size: 0.75rem;
+    }
+}
+
+

@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Lazy load components
+const Navbar = React.lazy(() => import('./components/NavBar/Navbar'));
+const Home = React.lazy(() => import('./components/pages/Home'));
+const Gallery = React.lazy(() => import('./components/pages/Gallery'));
+const Loading = React.lazy(() => import('./components/Loader'));
+
+const App: React.FC = () => {
+    const [loader, setLoading] = useState<boolean>(false); // State for loader visibility
+    const location = useLocation(); // Hook to track location changes
+
+    useEffect(() => {
+        const handleStart = () => {
+            setLoading(true);
+            setTimeout(() => {
+                const overlay = document.querySelector('.loading-overlay') as HTMLElement;
+                if (overlay) {
+                    overlay.classList.add('fade-out');
+                }
+            }, 500);
+        };
+
+        const handleComplete = () => {
+            setLoading(false);
+        };
+
+        handleStart();
+        setTimeout(handleComplete, 1000);
+
+        return () => handleComplete(); // Cleanup on unmount
+    }, [location.pathname]); // Dependency on location.pathname
+
+    return (
+        <Suspense >
+            {loader && <Loading />} {/* Conditionally render the loading component */}
+
+            <Navbar /> {/* Render Navbar component */}
+
+            <Routes>
+                <Route path="/" element={<Home />} /> {/* Route for Home */}
+                <Route path="/gallery" element={<Gallery />} /> {/* Route for Gallery */}
+            </Routes>
+        </Suspense>
+    );
 }
 
-export default App;
+export default function RootApp() {
+    return (
+        <Router>
+            <App />
+        </Router>
+    );
+}
