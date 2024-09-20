@@ -29,11 +29,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 2rem;
 }
 
 /* Styling for text content */
 .gallery-text {
-    border-radius: 70px;
+    border-radius: 2rem;
     width: 100%; /* Responsive width */
     max-width: 600px; /* Limit max width for readability */
     height: auto;

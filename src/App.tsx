@@ -5,8 +5,11 @@ import './App.css';
 // Lazy load components
 const Navbar = React.lazy(() => import('./components/NavBar/Navbar'));
 const Home = React.lazy(() => import('./components/pages/Home'));
-const Gallery = React.lazy(() => import('./components/pages/Gallery'));
-const Loading = React.lazy(() => import('./components/Loader'));
+// const Gallery = React.lazy(() => import('./components/pages/Gallery'));
+const Loading = React.lazy(() => import('./components/utils/Loader'));
+// const Pricing = React.lazy(() => import('./components/pages/Pricing'));
+
+const Construction = React.lazy(() => import('./components/pages/Construction'));
 
 const App: React.FC = () => {
     const [loader, setLoading] = useState<boolean>(false); // State for loader visibility
@@ -30,7 +33,7 @@ const App: React.FC = () => {
         handleStart();
         setTimeout(handleComplete, 1000);
 
-        return () => handleComplete(); // Cleanup on unmount
+        return () => handleComplete();// Cleanup on unmount
     }, [location.pathname]); // Dependency on location.pathname
 
     return (
@@ -39,9 +42,12 @@ const App: React.FC = () => {
 
             <Navbar /> {/* Render Navbar component */}
 
+
             <Routes>
                 <Route path="/" element={<Home />} /> {/* Route for Home */}
-                <Route path="/gallery" element={<Gallery />} /> {/* Route for Gallery */}
+                <Route path="/gallery" element={<Construction />} /> {/* Under Construction  */}
+                <Route path="/pricing" element={<Construction />} /> {/* Under Construction  */}
+                <Route path="/about" element={<Construction />} />
             </Routes>
         </Suspense>
     );

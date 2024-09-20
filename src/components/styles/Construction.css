@@ -1,0 +1,25 @@
+.construction {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+
+
+}
+
+.construction-inner {
+
+    padding: 5rem;
+
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.construction-image {
+    width: 512px;
+    height: auto;
+}

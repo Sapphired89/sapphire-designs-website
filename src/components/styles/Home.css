@@ -8,7 +8,7 @@
 
 .home-background::before {
     content: '';
-    background-image: url("../../images/background.png");
+    background-image: url("../../../public/background.png");
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -22,6 +22,7 @@
 
 .home-brand {
     display: flex;
+    border-radius: 2rem;
 }
 
 .home-brand-inner {
@@ -53,17 +54,23 @@
     margin: 0; /* Remove default margin if needed */
 }
 
+
 @media (max-width: 768px) {
     .home-logo {
-        height: 4.5rem;
+        height: 10rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
 
     .home-brand-inner {
-        padding: 1rem;
+        padding: 2.5rem;
+        flex-direction: column;
     }
 
     .text-item{
         font-size: 2rem;
+        text-align: center;
 
     }
 }
+

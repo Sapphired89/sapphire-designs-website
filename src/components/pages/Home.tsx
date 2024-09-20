@@ -6,6 +6,7 @@ const Home = () => { // I could use better naming conventions
     return (
         <>
             <div className="web-body home home-background">
+
                 <div className="home-brand border blue-shadow unselectable">
                     <div className="home-brand-inner">
                         <img src="/Sapphire-Designs.png" alt="logo" className="home-logo"/>

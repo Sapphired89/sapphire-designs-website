@@ -13,16 +13,6 @@ interface Data {
     sections: Section[];
 }
 
-// Function to dynamically import images
-const importImage = (imagePath: string) => {
-    try {
-        return require(`../../images/${imagePath}`);
-    } catch (error) {
-        console.error(`Error loading image: ${imagePath}`, error);
-        return ''; // Fallback in case of an error
-    }
-};
-
 const Gallery: React.FC = () => {
     const [dataState, setDataState] = useState<Data>({ sections: [] });
 
@@ -36,13 +26,13 @@ const Gallery: React.FC = () => {
         <React.Fragment key={section.id}>
             <div className="gallery-image border blue-shadow">
                 <img
-                    src={importImage(section.image)}
+                    src={`${section.image}`} // Corrected template literal syntax for dynamic image source
                     alt={`image-${section.id}`}
                     className="image"
                 />
             </div>
             <div className="gallery-text glass-item blue-shadow">
-                <h1 style={{ textAlign: "center", color: "#0084ff" }}>
+                <h1 style={{ textAlign: "center", color: "#0084ff", fontSize: "3rem" }}>
                     {section.title}
                 </h1>
                 <br />

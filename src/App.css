@@ -21,7 +21,7 @@ body {
 
 .border {
     border: double 10px transparent;
-    border-radius: 70px;
+
 
     background-image: linear-gradient(white, white),
     linear-gradient(to top, #0084FF, #81C2FF);
@@ -48,5 +48,10 @@ body {
     .border {
         border: double 5px transparent;
         border-radius: 1rem;
+    }
+
+    .blue-shadow {
+        filter: drop-shadow(0px 0px 25px rgba(0, 132, 255, 0.25));
+        -webkit-filter: drop-shadow(0px 0px 25px rgba(0, 132, 255, 0.25)); /* For Safari */
     }
 }
