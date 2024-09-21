@@ -43,6 +43,11 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.49);
 }
 
+.glass-item:hover {
+    transform: translateY(-10px); /* Lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
 @media (max-width: 768px) {
 
     .border {

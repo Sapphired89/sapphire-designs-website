@@ -8,7 +8,7 @@
 
 .construction-inner {
 
-    padding: 5rem;
+    padding: 20px;
 
     width: fit-content;
     height: fit-content;
@@ -19,7 +19,23 @@
 
 }
 
+.container-border {
+    border-radius: 2rem;
+}
+
 .construction-image {
     width: 512px;
     height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .construction-image {
+        width: 10rem;
+
+    }
+
+    .container-border {
+        border-radius: 1rem;
+    }
 }

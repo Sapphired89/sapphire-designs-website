@@ -6,7 +6,7 @@ const Construction = () => {
         <>
             <div className="web-body home-background construction ">
 
-                    <div className="construction-inner glass-item blue-shadow " style={{borderRadius: "4rem"}}>
+                    <div className="construction-inner glass-item blue-shadow container-border border" >
                         <img className="construction-image" alt="Construction" src="/Construction.png" />
                     </div>
 
