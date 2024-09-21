@@ -8,10 +8,10 @@ const Home = React.lazy(() => import('./components/pages/Home'));
 const Gallery = React.lazy(() => import('./components/pages/Gallery'));
 const Loading = React.lazy(() => import('./components/utils/Loader'));
 const Pricing = React.lazy(() => import('./components/pages/Pricing'));
-const About = React.lazy(() => import('./components/pages/About'));
+//const About = React.lazy(() => import('./components/pages/About'));
 const Info = React.lazy(() => import('./components/pages/Info'));
 
-//const Construction = React.lazy(() => import('./components/pages/Construction'));
+const Construction = React.lazy(() => import('./components/pages/Construction'));
 
 const App: React.FC = () => {
     const [loader, setLoading] = useState<boolean>(false); // State for loader visibility
@@ -49,7 +49,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Home />} /> {/* Route for Home */}
                 <Route path="/gallery" element={<Gallery />} /> {/* Under Construction  */}
                 <Route path="/pricing" element={<Pricing />} /> {/* Under Construction  */}
-                <Route path="/about" element={<About />} />
+                <Route path="/about" element={<Construction />} />
                 <Route path="/info" element={<Info />} />
             </Routes>
         </Suspense>
