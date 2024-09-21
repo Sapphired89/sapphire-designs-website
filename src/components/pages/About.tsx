@@ -5,7 +5,7 @@ const About = () => {
     return (
         <>
             <div className="web-body home-background about">
-                <div className="about-item glass-item">
+                <div className="about-item glass-item blue-shadow">
                     <div className="about-item-inner">
                         <div className="about-title">
                             <h1 style={{color: "#0084ff", fontSize: "3rem"}}> About Jack (Sapphire)</h1>
