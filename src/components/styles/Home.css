@@ -1,9 +1,9 @@
 .home {
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensure content doesn't overflow */
-    background: rgba(0, 0, 0, 0); /* Ensure no default background color */
+    width: 100vw;
+    display: grid;
 
+    align-items: center;
+    justify-content: center;
 }
 
 .home-background::before {
@@ -20,57 +20,55 @@
     z-index: -1; /* Place behind the content */
 }
 
-.home-brand {
-    display: flex;
-    border-radius: 2rem;
-}
-
-.home-brand-inner {
-
-    padding: 3rem 5rem;
-
+.home-container {
     width: fit-content;
     height: fit-content;
+    border-radius: 2rem;
+    display: flex; /* Ensure child elements are centered */
+    flex-direction: column; /* Stack logo and text */
+    align-items: center; /* Center align the content */
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.home-container-inner {
+    padding: 2rem;
 }
 
 .home-logo {
-    height: 384px;
+    height: 128px;
     width: auto; /* Adjusts width automatically to maintain aspect ratio */
-    margin-right: 3rem; /* Margin on the right side to create space */
+    margin-bottom: 1rem; /* Space between logo and text */
+}
+
+.home-logo-container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-bottom: 1rem; /* Space below the logo */
 }
 
 .text-container {
     display: flex;
     flex-direction: column; /* Stack spans vertically */
+    align-items: center; /* Center-align text */
 }
 
 .text-item {
     color: #0057AB;
-    font-size: 6rem;
+    font-size: 2rem;
     margin: 0; /* Remove default margin if needed */
 }
 
+@media only screen and (min-width:48em) {
+    .home-container {
+       border-radius: 4rem;
+       width: calc(100vw / 2);
+       height: fit-content;
+    }
 
-@media (max-width: 768px) {
     .home-logo {
-        height: 10rem;
-        margin-right: 0;
-        margin-bottom: 1rem;
+        width: 384px;
+        height: auto;
     }
 
-    .home-brand-inner {
-        padding: 2.5rem;
-        flex-direction: column;
-    }
 
-    .text-item{
-        font-size: 2rem;
-        text-align: center;
-
-    }
 }
-

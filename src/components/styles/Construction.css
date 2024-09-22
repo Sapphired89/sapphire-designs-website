@@ -27,15 +27,3 @@
     width: 512px;
     height: auto;
 }
-
-@media (max-width: 768px) {
-
-    .construction-image {
-        width: 10rem;
-
-    }
-
-    .container-border {
-        border-radius: 1rem;
-    }
-}

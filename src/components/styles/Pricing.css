@@ -1,75 +1,52 @@
 .pricing {
-    display: flex;
-    justify-content: center; /* Center the entire pricing section */
-    align-items: center;
-    overflow-y: auto;
-    padding: 4rem 0; /* Ensure even padding on the top and bottom */
-}
-
-.pricing-container {
-    width: 100%; /* Ensure it takes up full width */
-    padding: 2rem;
-    border-radius: 2rem;
-    text-align: center;
-    background-color: white; /* Optional */
-    margin: 0 auto; /* Ensure the container itself is centered */
-}
-
-.pricing-container-inner {
+    width: 100vw;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 columns for larger screens */
-    gap: 2rem; /* Adds spacing both horizontally and vertically */
-    width: 100%; /* Ensure it uses the full available width */
-    justify-items: center; /* Center the items within each column */
-    box-sizing: border-box; /* Make sure padding and borders are included in size calculations */
+
+
+    justify-content: center;
 }
 
 .pricing-item {
-    width: 100%; /* Let it take up full available width */
-    max-width: 512px; /* Max width for desktop */
-    min-height: 512px;
-    padding: 2rem;
-    background-color: #fff;
     border-radius: 2rem;
-    margin: 0 auto; /* Center each item individually */
+    box-sizing: border-box; /* Include padding and border in total width */
+    margin: 1rem 0; /* Space above each item */
+    display: grid; /* Use grid for items */
+    align-items: center; /* Center content vertically */
+    justify-items: center; /* Center content horizontally */
+    width: fit-content; /* Allow item to use full width */
+    max-width: 75vw; /* Maintain maximum width */
+    height: fit-content;
+
+
 }
 
-.ratio-logo {
-    width: 256px;
+.pricing-image {
+    margin: 1rem 0;
+    width: 75%;
     height: auto;
 }
 
-.ratio-ui {
-    width: 384px;
-    height: auto;
+.pricing-text {
+    margin: 1rem;
+
 }
 
-@media (max-width: 768px) {
-
-    .pricing-container {
-        padding: 2rem 0;
-    }
-    .pricing-container-inner {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Stack columns on smaller screens */
-        gap: 1.5rem;
-
-        box-sizing: border-box;
+@media only screen and (min-width: 48em) {
+    .pricing {
+        align-items: center;
+        display: grid; /* Ensure grid layout is maintained */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+        justify-items: center; /* Center items in their grid cells */
+        gap: 2rem; /* Add gap between items for better spacing */
     }
 
     .pricing-item {
-        width: 100%; /* Use full width to avoid overflow */
-        max-width: 100%; /* Ensure items don't exceed their parent */
-        margin: 0 auto; /* Center the items */
-        box-sizing: border-box; /* Consider padding/borders in the width calculation */
+        border-radius: 4rem;
+        height: 512px;
+        max-width: 512px;
     }
-
-    .ratio-logo {
-        width: 128px;
-    }
-
-    .ratio-ui {
-        width: 256px;
+    .pricing-image {
+        width: 50%;
+        height: auto;
     }
 }

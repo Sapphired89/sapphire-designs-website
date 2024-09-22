@@ -24,36 +24,36 @@ const Gallery: React.FC = () => {
     // Render section items
     const renderSection = (section: Section) => (
         <React.Fragment key={section.id}>
-            <div className="gallery-image border blue-shadow">
+            <div className="gallery-item border blue-shadow">
                 <img
                     src={`${section.image}`} // Corrected template literal syntax for dynamic image source
                     alt={`image-${section.id}`}
-                    className="image"
+                    className="gallery-image"
                 />
             </div>
-            <div className="gallery-text glass-item blue-shadow">
-                <h1 style={{ textAlign: "center", color: "#0084ff", fontSize: "3rem" }}>
+            <div className="gallery-item glass-item blue-shadow">
+                <h1 className="title-footer">
                     {section.title}
                 </h1>
                 <br />
-                <h3>
-                    {section.description.split('\n').map((line, index) => (
-                        <React.Fragment key={index}>
-                            {line}
-                            <br />
-                            <br />
-                        </React.Fragment>
-                    ))}
-                </h3>
+                <div className="gallery-text" >
+                    <h3>
+                        {section.description.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </h3>
+                </div>
             </div>
         </React.Fragment>
     );
 
     return (
         <div className="web-body gallery home-background">
-            <div className="gallery-container">
                 {dataState.sections.map(renderSection)}
-            </div>
         </div>
     );
 };
